@@ -1,6 +1,6 @@
 {
   "name": "differently",
-  "version": "0.0.0-pre",
+  "version": "1.0.0",
   "description": "Compare JS Objects With Color Difference.",
   "main": "build/index.js",
   "module": "src/index.js",
