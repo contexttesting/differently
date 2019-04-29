@@ -2,10 +2,10 @@
 
 %NPM: differently%
 
-`differently` is Compare JS Objects With Color Difference.
+`differently` Compares JS Objects With Color Difference.
 
 ```sh
-yarn add -E differently
+yarn add differently
 ```
 
 ## Table Of Contents
