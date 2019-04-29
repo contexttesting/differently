@@ -30,7 +30,12 @@
     "url": "git://github.com/contexttesting/differently.git"
   },
   "keywords": [
-    "differently"
+    "differently",
+    "diff",
+    "difference",
+    "object",
+    "js",
+    "javascript"
   ],
   "author": "Anton <anton@adc.sh>",
   "license": "MIT",
