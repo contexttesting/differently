@@ -57,13 +57,18 @@ export default function differently(objectA, objectB) {
       }
     }
     if (Array.isArray(a) && Array.isArray(b)) {
+      let j
       const updated = a.map((valA, i) => {
+        j = i
         const valB = b[i]
         let ca = compare(valA, valB)
         if (ca) ca = `${writeCommon(`[${i}]`)}\n${ca}`
         return ca
       }).filter(Boolean)
-      return updated.join('\n')
+      const rest = b.slice(j + 1).map((valB, i) => {
+        return `${writeCommon(`[${j + i + 1}]`)}\n${write(undefined, valB)}`
+      })
+      return [...updated, ...rest].join('\n')
     }
     if (typeof a == 'object' && typeof b == 'object') {
       const added = []

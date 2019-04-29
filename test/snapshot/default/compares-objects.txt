@@ -1,0 +1,8 @@
+[31m- hello: true[0m
+[32m+ world: false[0m
+  test
+  [31m- test[0m
+  [32m+ 10[0m
+  obj
+  [31m- innerA: true[0m
+  [32m+ innerB: false[0m

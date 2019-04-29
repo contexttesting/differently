@@ -1,4 +1,4 @@
-import { equal, ok } from 'zoroaster/assert'
+import { equal } from 'zoroaster/assert'
 import Context from '../context'
 import differently from '../../src'
 
@@ -9,13 +9,20 @@ const T = {
     equal(typeof differently, 'function')
   },
   'compares different types'() {
-    differently('test', 10)
+    return differently('test', 10)
   },
-  async 'gets a link to the fixture'({ FIXTURE }) {
-    const res = await differently({
-      text: FIXTURE,
-    })
-    ok(res, FIXTURE)
+  'compares objects'() {
+    return differently(
+      { test: 'test', hello: true, obj: { innerA: true, innerC: 100 } },
+      { test: 10, world: false, obj: { innerB: false, innerC: 100 } })
+  },
+  'compares objects with arrays'() {
+    return differently(
+      { test: [1, 2, 3, 5, 6] },
+      { test: [1, 2, 4, 5, 7, Infinity] })
+  },
+  'compares arrays'() {
+    return differently([10], [20])
   },
 }
 
