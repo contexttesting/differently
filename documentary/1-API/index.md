@@ -20,6 +20,7 @@ Compares the two given objects recursively. Returns the string containing the hi
 %EXAMPLE: example, ../src => differently%
 
 <table>
+<tr><th>Output</th><th>CLI</th></tr>
 <tr><td>
 
 %FORK example%

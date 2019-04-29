@@ -14,9 +14,8 @@ const log = (t, ...args) => {
  */
                function differently(objectA, objectB) {
   let level = 0
-  // let s = ''
 
-  const write = (was, became) => {
+  const write = (was, became = undefined) => {
     const i = ' '.repeat(level * 2)
     const b = became !== undefined ? c('+ ' + toString(became), 'green') : null
     const w = was !== undefined ? c('- ' + toString(was), 'red') : null

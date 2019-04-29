@@ -78,6 +78,7 @@ log(differently([1], [2, Infinity]))
 ```
 
 <table>
+<tr><th>Output</th><th>CLI</th></tr>
 <tr><td>
 
 ```

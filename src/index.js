@@ -14,7 +14,6 @@ const log = (t, ...args) => {
  */
 export default function differently(objectA, objectB) {
   let level = 0
-  // let s = ''
 
   const write = (was, became = undefined) => {
     const i = ' '.repeat(level * 2)
