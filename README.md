@@ -12,6 +12,7 @@ yarn add differently
 
 - [Table Of Contents](#table-of-contents)
 - [API](#api)
+- [`differently(objectA: *, objectB: *): string`](#differentlyobjecta-objectb--string)
 - [Copyright](#copyright)
 
 <p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/0.svg?sanitize=true"></a></p>
@@ -26,21 +27,13 @@ import differently from 'differently'
 
 <p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/1.svg?sanitize=true"></a></p>
 
-```## differently =>
-[
-  ["objectA", "*"],
-  ["objectB", "*"]
-]
-```
+## `differently(`<br/>&nbsp;&nbsp;`objectA: *,`<br/>&nbsp;&nbsp;`objectB: *,`<br/>`): string`
 
 Compares the two given objects recursively. Returns the string containing the highlighted difference between the compared values. This is meant to work with `deepEqual`, where the order of elements in the array matters.
 
 ```js
 import differently from 'differently'
 
-const log = (s) => console.log('%s\n', s)
-let s
-// deepStrictEqual([1,2], [2,1])
 s = differently(null, {})
 log(s)
 

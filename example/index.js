@@ -1,8 +1,10 @@
+const log = (s) => console.log('%s\n', s)
+
+let s
+/* start example */
+
 import differently from '../src'
 
-const log = (s) => console.log('%s\n', s)
-let s
-// deepStrictEqual([1,2], [2,1])
 s = differently(null, {})
 log(s)
 
@@ -37,3 +39,4 @@ s = differently({ a: 0, test: 1, common: {
 log(s)
 
 log(differently([1], [2, Infinity]))
+/* end example */

@@ -8,7 +8,7 @@ import differently from 'differently'
 
 %~%
 
-```## differently =>
+```## differently => string
 [
   ["objectA", "*"],
   ["objectB", "*"]
