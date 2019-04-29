@@ -34,6 +34,7 @@ export default function differently(objectA, objectB) {
       if (!compareDates(a, b)) {
         return write(a, b)
       }
+      return ''
     } else if (
       (a instanceof Date && !(b instanceof Date)) ||
       (!(a instanceof Date) && b instanceof Date) ||
@@ -47,6 +48,7 @@ export default function differently(objectA, objectB) {
       (isPrimitive(a) && !isPrimitive(b))
     ) {
       if (a != b) return write(a, b)
+      return ''
     } else if (a.constructor && !b.constructor) {
       return write(a.constructor.name, b)
     } else if (!a.constructor && b.constructor) {
@@ -54,6 +56,11 @@ export default function differently(objectA, objectB) {
     } else if (a.constructor && b.constructor) {
       if (a.constructor.name != b.constructor.name) {
         return write(a.constructor.name, b.constructor.name)
+      }
+      const valA = a.valueOf()
+      const valB = b.valueOf()
+      if (isPrimitive(valA) && isPrimitive(valB) && valA != valB) {
+        return write(valA, valB)
       }
     }
     if (Array.isArray(a) && Array.isArray(b)) {
@@ -81,7 +88,12 @@ export default function differently(objectA, objectB) {
       Object.keys(b).forEach((k) => {
         if (!(k in a)) added.push(k)
       })
-      const R = removed.map(r => write(`${r}: ${toString(a[r])}`))
+      const R = removed.map(r => {
+        let s = toString(a[r])
+        // if (/^\s+$/.test(s)) s = `"${s}"`
+        s = `: ${s}`
+        return write(`${r}${s}`)
+      })
       const A = added.map(ad => write(undefined, `${ad}: ${toString(b[ad])}`))
 
       const updated = common.map((k) => {
@@ -100,6 +112,7 @@ export default function differently(objectA, objectB) {
 
       return RA
     }
+    console.error('Could not compare two values: %s %s. Please file a bug with differently.', a, b)
   }
 
   const s = compare(objectA, objectB)
@@ -115,9 +128,11 @@ const isPrimitive = a => {
 
 const toString = (p) => {
   if (Array.isArray(p)) return `Array[${p.toString()}]`
-  if (p && p.toString) return p.toString()
-  return `${p}`
-  // return `${(p && 'toString' in p) ? p.toString() : p}`
+  const hasToString = p && p.toString
+  const s = hasToString ? p.toString() : `${p}`
+  // if (p && p.constructor && p.constructor.name)
+    // return `${p.constructor.name}.${s}`
+  return s
 }
 
 /**
