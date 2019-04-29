@@ -320,6 +320,11 @@ erte@^1.1.7:
   dependencies:
     diff "4.0.1"
 
+erte@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/erte/-/erte-1.2.0.tgz#8b7dbf6ad822d96f071947d20d5f440623f10769"
+  integrity sha512-saxyNviRCvFENCyZ66O58cY8icaraVeQOgGks6ujsBeS7zf3yyjXrhyfMpERZo7SJH1KKdXcSQqgemxW6eIpjA==
+
 es5-ext@0.8.x:
   version "0.8.2"
   resolved "https://registry.yarnpkg.com/es5-ext/-/es5-ext-0.8.2.tgz#aba8d9e1943a895ac96837a62a39b3f55ecd94ab"

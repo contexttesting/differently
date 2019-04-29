@@ -8,8 +8,8 @@ const T = {
   'is a function'() {
     equal(typeof differently, 'function')
   },
-  async 'calls package without error'() {
-    await differently()
+  'compares different types'() {
+    differently('test', 10)
   },
   async 'gets a link to the fixture'({ FIXTURE }) {
     const res = await differently({
