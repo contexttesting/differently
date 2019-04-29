@@ -36,4 +36,4 @@ s = differently({ a: 0, test: 1, common: {
 } })
 log(s)
 
-log(differently([1], [2]))
+log(differently([1], [2, Infinity]))
