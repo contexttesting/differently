@@ -76,6 +76,10 @@ log(s)
 
 log(differently([1], [2, Infinity]))
 ```
+
+<table>
+<tr><td>
+
 ```
 - null
 + [object Object]
@@ -118,6 +122,11 @@ log(differently([1], [2, Infinity]))
 [1]
 + Infinity
 ```
+</td><td>
+
+![Showing the color differently](doc/doc.png)
+</td></tr>
+</table>
 
 <p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/2.svg?sanitize=true"></a></p>
 
